@@ -3,6 +3,15 @@ Application allows you to easilly convert any ASCII coded text into some ASCII a
 
 ---
 
+## Instalation
+```bash
+git clone https://github.com/wendyn-projects/ASCII-Art-Writer.git
+make -C ASCII-Art-Writer
+
+```
+
+---
+
 ## Usage
 Documentation is implemented within the `-help` command but here are some examples:
 ### Printing a Word
@@ -21,14 +30,14 @@ Documentation is implemented within the `-help` command but here are some exampl
 ```
 *`-font` is also interactive if you leave it without input.*
 
-*If you want to view available fonts just add `??` option.*
+*Do you want to view available fonts? Just add `??` option.*
 
 ### Chaining Multiple Commands
 You are also allowed to chain multiple commands, here is an example:
 ```
 -font?? -font -spacing -space -print
 ```
-The command above will show you avaliable fonts then asks you for the font, for spacing, for background and then finally for the text you want to print.
+The command above will show you avaliable fonts then asks you for the font - for spacing - for background - and then finally for the text you want to print.
 
 ---
 
@@ -73,8 +82,11 @@ static TxtDec* getFont(unsigned char id)
     case 3:
         font = aawGetGRDFont8();
         break;
+        
+    ...
+    
 /*-------------------------------- RIGHT HERE --------------------------------*/
-    case 4:
+    case FOLLOWING_ID:
         font = YOUR_FONT;
         break;
 /*----------------------------------------------------------------------------*/
@@ -84,6 +96,46 @@ static TxtDec* getFont(unsigned char id)
 }
 ```
 ### Custom Commands
-So maybe you want to add a command that helps you to choose the right font by showing your text printed in all fonts. How, you ask? Simple, every command function has 2 parameters - `listSender` *(where it was called from)* and `args` *(command arguments)* and it must return end of its input from `args`.
+So maybe you want to add your own command. 
+How, you ask? 
+Simple, every command function has 2 parameters - `listSender` *(where it was called from)* and `args` *(command arguments)* and it must return end of its input from `args`.
 
-It's 00:00 and I'm gonna finnish this later.
+If it takes 0 arguments, just return `args`.
+```c
+char* customCmd(LCMD* listSender, const char* args)
+{
+    /* your code goes here */
+    return (char*)args;
+}
+```
+But what if you also want it to have some input? Then you need to parse it from `args` and return where you ended up.
+```c
+char* customCmd(LCMD* listSender, const char* args)
+{
+    int input;
+    char* arguments2Parse = (char*)args;
+    
+    //let's skip the spaces first
+    while(*arguments2Parse++ == ' ');
+    
+    //now the parsing
+    if(sscanf(arguments2Parse, "%d", &input) != 0)
+    {
+        /* your code goes here */
+    
+        //and now we need to skip to the end of what we just parsed
+        while(*arguments2Parse != ' ' && *arguments2Parse != '\0');
+            ++arguments2Parse;
+    }
+    else
+    {
+        /* in case of invalid input */
+    }
+    
+    return arguments2Parse;
+}
+```
+Now we just need to list it in our command list `commands` in the `main.c` file and that's it, done.
+```c
+lcmdAddItem(commands, CUSTOM_CMD_NAME, CUSTOM_CMD_DESCRIPTION, &customCmd);
+```
