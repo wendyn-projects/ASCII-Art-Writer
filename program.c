@@ -9,6 +9,7 @@
 
 #include "shell.h"
 #include "ascii_art_writer.h"
+#include "aaw_sline_fonts.h"
 #include "aaw_dbline_fonts.h"
 #include "aaw_round_fonts.h"
 #include "aaw_grid_fonts.h"
@@ -31,14 +32,18 @@ static TxtDec* getFont(unsigned char id)
     switch(id)
     {
     case 1:
-        font = aawGetDBLFont3();
+        font = aawGetSLNFont3();
         break;
 
     case 2:
-        font = aawGetRNDFont5();
+        font = aawGetDBLFont3();
         break;
 
     case 3:
+        font = aawGetRNDFont5();
+        break;
+
+    case 4:
         font = aawGetGRDFont8();
         break;
     }
