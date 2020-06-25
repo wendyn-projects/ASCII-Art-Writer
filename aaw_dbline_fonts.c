@@ -3,7 +3,7 @@
 /*
  * "Grid-line" (vertical/horizontal lines only) fonts for ASCII Art Writer
  *
- * File:    aaw_grid_fonts.c
+ * File:    aaw_dbline_fonts.c
  * Author:  Vaclav [WENDYN] Nemec
  * Version: 1.0
  */
