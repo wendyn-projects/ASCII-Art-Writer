@@ -8,7 +8,7 @@
  * Version: 1.0
  */
 
-const ASCIISprite AAW_FONT_5_SPRITES[] = {
+static const ASCIISprite AAW_FONT_5_SPRITES[] = {
 
     {
         6, 5,
