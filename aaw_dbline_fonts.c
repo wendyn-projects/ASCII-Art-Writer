@@ -72,7 +72,7 @@ char AAW_DBLINE_OVERLAY(char a, char b)
     return directions[a & b];
 }
 
-const ASCIISprite AAW_FONT_3_SPRITES[] = {
+static const ASCIISprite AAW_FONT_3_SPRITES[] = {
 
     {
         2, 3,
