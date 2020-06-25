@@ -45,6 +45,8 @@ The command above will show you avaliable fonts then asks you for the font - for
 ### Custom Fonts
 Do you want to create your own font? That's Easy. Just store it in this format:
 
+*(also defined in `ascii_art_writer.h`)*
+
 #### Structure of Fonts
 * Array of Sprites
     * Sprite
@@ -61,7 +63,6 @@ Do you want to create your own font? That's Easy. Just store it in this format:
     * If you are unsure on how to write your own then just leave it `NULL` and the `aawPrint` function will use its default.
 * Font Name
 
-*(also defined in `ascii_art_writer.h`)*
 #### `-font` Command
 Now if you want your font to show up, just add the option to the swicth statement inside of `getFont` function within the `program.c` file.
 ```c
