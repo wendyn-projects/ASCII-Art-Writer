@@ -139,3 +139,7 @@ Now we just need to list it in our command list `commands` in the `main.c` file 
 ```c
 lcmdAddItem(commands, CUSTOM_CMD_NAME, CUSTOM_CMD_DESCRIPTION, &customCmd);
 ```
+Just recompile the code.
+```bash
+make
+```
