@@ -1,3 +1,6 @@
+#ifndef AAW_GRID_FONTS_H_
+#define AAW_GRID_FONTS_H_
+
 /*
  * "Grid-line" (vertical/horizontal lines only) fonts for ASCII Art Writer
  *
@@ -5,9 +8,6 @@
  * Author:  Vaclav [WENDYN] Nemec
  * Version: 1.0
  */
-
-#ifndef AAW_GRID_FONTS_H_
-#define AAW_GRID_FONTS_H_
 
 #include "ascii_art_writer.h"
 
