@@ -342,7 +342,7 @@ static TxtDec AAW_SLN_FONT_3 = { (ASCIISprite*)AAW_FONT_3_SPRITES, {
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
-}, -1, &AAW_SLINE_OVERLAY, "single_line" };
+}, -1, &AAW_SLINE_OVERLAY, "single line" };
 
 TxtDec* aawGetSLNFont3()
 {
