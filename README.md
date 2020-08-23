@@ -4,12 +4,16 @@ Application allows you to easilly convert any ASCII coded text into some ASCII a
 ---
 
 ## Instalation
+### Linux
 ```bash
 git clone https://github.com/wendyn-projects/ASCII-Art-Writer.git
 make -C ASCII-Art-Writer
-
 ```
-
+### Windows
+```bash
+git clone https://github.com/wendyn-projects/ASCII-Art-Writer.git
+make -C ASCII-Art-Writer -f makefile.win
+```
 ---
 
 ## Usage
